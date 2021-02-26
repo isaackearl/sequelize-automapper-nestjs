@@ -1,4 +1,14 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@automapper/classes/experimental/transformer-plugin",
+        "options": {
+          "modelFileNameSuffix": [".dto.ts", ".entity.ts"]
+        }
+      }
+    ]
+  }
 }
