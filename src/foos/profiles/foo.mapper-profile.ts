@@ -1,9 +1,9 @@
 import { AutomapperProfile, InjectMapper } from '@automapper/nestjs';
-import type { Mapper } from '@automapper/types';
 import { Injectable } from '@nestjs/common';
 import { Foo } from '../entities/foo.entity';
 import { FooDto } from '../dto/foo.dto';
 import { mapFrom } from '@automapper/core';
+import type { Mapper } from '@automapper/types';
 
 @Injectable()
 export class FooMapperProfile extends AutomapperProfile {
