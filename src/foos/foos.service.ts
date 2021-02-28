@@ -13,9 +13,9 @@ export class FoosService {
   ) {}
 
   findOne(id: number) {
-    const foo = new Foo();
-    foo.bar = 'baz';
-    foo.id = 1;
-    return this.mapper.map(foo, FooDto, Foo);
+    const fooDto = new FooDto();
+    fooDto.bar = 'baz';
+    fooDto.id = 1;
+    return this.mapper.map(fooDto, Foo, FooDto);
   }
 }
