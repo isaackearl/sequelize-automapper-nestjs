@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { FoosModule } from './foos/foos.module';
 import { AutomapperModule } from '@automapper/nestjs';
-import { classes } from '@automapper/classes';
+import { sequelize } from '@automapper/sequelize';
 
 @Module({
   imports: [
     AutomapperModule.forRoot({
-      options: [{ name: 'mapper', pluginInitializer: classes }],
+      options: [{ name: 'mapper', pluginInitializer: sequelize() }],
       singular: true,
     }),
     SequelizeModule.forRoot({

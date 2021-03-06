@@ -16,6 +16,16 @@ export class FoosService {
     const fooDto = new FooDto();
     fooDto.bar = 'baz';
     fooDto.id = 1;
-    return this.mapper.map(fooDto, Foo, FooDto);
+    const newFoo = this.mapper.map(fooDto, Foo, FooDto);
+    console.log(newFoo);
+    console.log('yea the first conversion works!');
+
+    const foo = new Foo();
+    foo.bar = 'lala';
+    foo.id = 2;
+    const newFooDto = this.mapper.map(foo, FooDto, Foo);
+    console.log(newFooDto);
+    return newFoo;
+    console.log('this one is empty');
   }
 }
